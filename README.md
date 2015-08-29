@@ -1,5 +1,6 @@
-# brackets package
+##  Brackets Package
+Simple Atom package to speedy type the round,curly,square, brackets !
 
-A short description of your package.
-
-![A screenshot of your spankin' package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+Ctrl + Y
+Ctrl + U
+Ctrl + H
