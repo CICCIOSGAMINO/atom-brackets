@@ -1,17 +1,17 @@
 {
   "name": "brackets",
   "main": "./lib/brackets",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shortcuts for typing the curly, square, simple brackets ",
   "activationEvents": [
     "brackets:curlybrackets",
     "brackets:parentheses",
-    "brackets:squarebrackets"],
+    "brackets:squarebrackets"
+  ],
   "repository": "https://github.com/CICCIOSGAMINO/atom-brackets",
   "license": "MIT",
   "engines": {
     "atom": ">=0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
