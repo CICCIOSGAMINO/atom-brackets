@@ -18,8 +18,6 @@ module.exports = Brackets =
   deactivate: ->
     @subscriptions.dispose()
 
-  serialize: ->
-
   squarebrackets: ->
     # console.log 'Brackets1 Square'
 
