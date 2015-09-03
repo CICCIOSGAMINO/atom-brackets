@@ -1,16 +1,39 @@
-# See https://atom.io/docs/latest/creating-a-package#menus for more details
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
 'context-menu':
-  '.overlayer':
-      'Enable brackets': 'brackets:toggle'
-
+  'atom-text-editor': [
+    {
+      'label': 'Curly brackets'
+      'command': 'brackets:curlybrackets'
+    },
+    {
+      'label': 'Square brackets'
+      'command': 'brackets:squarebrackets'
+    },
+    {
+      'label': 'Parenthesis brackets'
+      'command': 'brackets:parenthesis'
+    }
+  ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'brackets'
+      'label': 'Brackets'
       'submenu': [
-        { 'label': 'Toggle', 'command': 'brackets:toggle' }
+        {
+          'label': 'Curly brackets'
+          'command': 'brackets:curlybrackets'
+        },
+        {
+          'label': 'Square brackets'
+          'command': 'brackets:squarebrackets'
+        },
+        {
+          'label': 'Parenthesis brackets'
+          'command': 'brackets:parenthesis'
+        }
       ]
     ]
   }
 ]
+
