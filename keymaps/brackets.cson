@@ -8,6 +8,6 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 '.workspace':
-  'ctrl-u': 'brackets:curlybrackets'
-  'ctrl-y': 'brackets:parentheses'
-  'ctrl-h': 'brackets:squarebrackets'
+  'ctrl-alt-u': 'brackets:curlybrackets'
+  'ctrl-alt-y': 'brackets:parenthesis'
+  'ctrl-alt-h': 'brackets:squarebrackets'
