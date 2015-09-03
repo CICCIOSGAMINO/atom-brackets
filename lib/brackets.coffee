@@ -1,18 +1,42 @@
-module.exports =
-  activate: ->
-      atom.workspaceView.command "brackets:curlybrackets", => @curlybrackets()
-      atom.workspaceView.command "brackets:parentheses", => @parentheses()
-      atom.workspaceView.command "brackets:squarebrackets", => @squarebrackets()
+{CompositeDisposable} = require 'atom'
+
+module.exports = Brackets =
+
+  subscriptions: null
+
+  activate: (state) ->
+
+    # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
+    @subscriptions = new CompositeDisposable
+
+    # Register command that toggles this view
+    @subscriptions.add atom.commands.add 'atom-workspace', 'brackets:curlybrackets': => @curlybrackets()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'brackets:squarebrackets': => @squarebrackets()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'brackets:parenthesis': => @parenthesis()
+
+
+  deactivate: ->
+    @subscriptions.dispose()
+
+  serialize: ->
+
+  squarebrackets: ->
+    # console.log 'Brackets1 Square'
+
+    # get the active TextEditor and insert the right text
+    if editor = atom.workspace.getActiveTextEditor()
+      editor.insertText('[]')
 
   curlybrackets: ->
-      # this assume the active pane is an editor
-      editor = atom.workspace.activePaneItem
+    # console.log 'Brackets1 Curly'
+
+    # get the active TextEditor and insert the right text
+    if editor = atom.workspace.getActiveTextEditor()
       editor.insertText('{}')
-  parentheses: ->
-      # this assume the active pane is an editor
-      editor = atom.workspace.activePaneItem
+
+  parenthesis: ->
+    # console.log 'Brackets1 Pharentesis'
+
+    # get the active TextEditor and insert the right text
+    if editor = atom.workspace.getActiveTextEditor()
       editor.insertText('()')
-  squarebrackets: ->
-      # this assume the active pane is an editor
-      editor = atom.workspace.activePaneItem
-      editor.insertText('[]')
